@@ -1,0 +1,30 @@
+.code-from{
+    width: 100%;
+    padding: 3px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    min-height: 200px;
+    &-wrapper {
+        font-size: 15px;
+        color: rgb(25, 144, 184);
+        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+    &-textarea {
+        width: 99%;
+        min-height: 200px;
+        padding: 3px;
+        outline: 0;
+        font-size: 15px;
+        line-height: 24px;
+        word-wrap: break-word;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-radius: 5px;
+    }
+    &-code {
+        width: 100%;
+        min-height: 200px;
+        display: block;
+    }
+} 
+[contenteditable]:focus{outline: none;}
