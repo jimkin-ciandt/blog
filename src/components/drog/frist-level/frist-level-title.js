@@ -14,14 +14,23 @@ function FristLevelTitle (props) {
         }
     }, [show])
 
+    useEffect(() => {
+        if (props.inPage) {
+            setTitle(props.inValue)
+            return;
+        }
+        handlerFromValue();
+    }, [inFrom])
+
     const confirmData = (e) => {
         setShow(true);
-        handlerFromValue()
+        handlerFromValue();
     }
 
     const handlerFromValue = (e) => {
         props.sendData({
             type: 'titleF',
+            identification: props.identification,
             value: titleValue
         });
     }

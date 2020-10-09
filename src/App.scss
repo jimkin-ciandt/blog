@@ -7,10 +7,10 @@
   padding: 0;
 }
 .home-wrapper{
-  background-color: #ffffff;
   width: 100%;
   padding-top: 60px;
   &-bar {
+      background-color: #ffffff;
       width: 100%;
       height: 60px;
       border-bottom: 1px solid #e6e6e6;
@@ -68,7 +68,7 @@
 }
 
 .tree-box{
-  position: absolute;
+  position: fixed;
   bottom: 90px;
   right: 260px;
   transform: scale(0.5);

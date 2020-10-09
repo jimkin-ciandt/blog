@@ -20,13 +20,53 @@
         height: 100%;
         border: 1px solid #eeeeee;
         width: 40%;
-        ul {
+        &-content {
+            h2 {
+                margin: 16px;
+                font-weight: 400;
+                font-size: 26px;
+                color: #555;
+                width: 100%;
+            }
+            &-tags {
+                width: 100%;
+                h4 {
+                    margin: 8px;
+                }
+                ul li {
+                    display: inline-block;
+                    border: 1px solid #eeeeee;
+                    border-radius: 5px;
+                    padding: 3px 12px;
+                    margin: 12px;
+                    cursor: pointer;
+                }
+                .choosed {
+                    background-color: #3399CC;
+                    color: white;
+                }
+            }
+            &-textare {
+                width: 100%;
+                textarea {
+                    width: 100%;
+                    min-height: 100px;
+                    font-weight: 400;
+                    font-size: 18px;
+                    color: #555;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    resize: none;
+                }
+            }
+        }
+        &-list {
             display: block;
             width: 100%;
             min-height: 500px;
-        }
-        ul li {
-            display: block;
+            li {
+                display: block;
+            }
         }
     }
 }

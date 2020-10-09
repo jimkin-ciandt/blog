@@ -10,14 +10,29 @@ function PictureUpload(props) {
 
     const confirmUpload = (e) => {
         const reads = new FileReader();
-        reads.readAsDataURL(e.target.files[0]);
+        const file = e.target.files[0];
+        reads.readAsDataURL(file);
+        const target = imgRef.current;
 
-        const target = imgRef.current
         reads.onload = (event) => {
 
+            handlerFromValue(file);
             target.src = event.currentTarget.result;
         }
-        setShow(false)
+        setShow(false);
+        
+    }
+
+    const handlerFromValue = (file) => {
+        // const fromData = new FormData();
+
+        // fromData.append(file.name, file);
+
+        props.sendData({
+            type: 'file',
+            identification: props.identification,
+            value: file
+        });
     }
 
     return (

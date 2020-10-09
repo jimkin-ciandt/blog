@@ -12,7 +12,28 @@ function Secondary (props) {
         if (!show) {
             inputRef.current.focus();
         }
-    }, [show])
+    }, [show]);
+
+    useEffect(() => {
+        if (props.inPage) {
+            setTitle(props.inValue)
+            return;
+        }
+        handlerFromValue();
+    }, [inFrom])
+
+    const confirmData = () => {
+        setShow(true);
+        handlerFromValue()
+    }
+
+    const handlerFromValue = (e) => {
+        props.sendData({
+            type: 'titleS',
+            identification: props.identification,
+            value: titleValue
+        });
+    }
     
     return (
         <div className = "titleSec draging">
@@ -32,7 +53,7 @@ function Secondary (props) {
                         placeholder = "请输入标题" 
                         className = "titleSec-input"
                         onChange = {(e) => setTitle(e.target.value)}
-                        onBlur = {() => setShow(true)}></input>
+                        onBlur = {() => confirmData()}></input>
                 }
                 
             </span>
